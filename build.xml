@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+
+<project name="camel_test" default="compile">
+	<property name="lib" value="/Users/go/dev/camel/lib" />
+	<property name="classpath" value="${lib}/camel-ahc-2.9.2.jar;
+									 ${lib}/camel-amqp-2.9.2.jar;
+									 ${lib}/camel-apns-2.9.2.jar;
+									 ${lib}/camel-atom-2.9.2.jar;
+									 ${lib}/camel-aws-2.9.2.jar;
+									 ${lib}/camel-bam-2.9.2.jar;
+									 ${lib}/camel-bean-validator-2.9.2.jar;
+									 ${lib}/camel-bean-validator-2.9.2.jar;
+									 ${lib}/camel-bindy-2.9.2.jar;
+									 ${lib}/camel-blueprint-2.9.2.jar;
+									 ${lib}/camel-cache-2.9.2.jar;
+									 ${lib}/camel-castor-2.9.2.jar;
+									 ${lib}/camel-cometd-2.9.2.jar;
+									 ${lib}/camel-context-2.9.2.jar;
+									 ${lib}/camel-core-2.9.2.jar;
+									 ${lib}/camel-core-osgi-2.9.2.jar;
+									 ${lib}/camel-crypto-2.9.2.jar;
+									 ${lib}/camel-csv-2.9.2.jar;
+									 ${lib}/camel-cxf-2.9.2.jar;
+									 ${lib}/camel-cxf-transport-2.9.2.jar;
+									 ${lib}/camel-dns-2.9.2.jar;
+									 ${lib}/camel-dozer-2.9.2.jar;
+									 ${lib}/camel-eclipse-2.9.2.jar;
+									 ${lib}/camel-ejb-2.9.2.jar;
+									 ${lib}/camel-eventadmin-2.9.2.jar;
+									 ${lib}/camel-exec-2.9.2.jar;
+									 ${lib}/camel-flatpack-2.9.2.jar;
+									 ${lib}/camel-freemarker-2.9.2.jar;
+									 ${lib}/camel-ftp-2.9.2.jar;
+									 ${lib}/camel-gae-2.9.2.jar;
+									 ${lib}/camel-groovy-2.9.2.jar;
+									 ${lib}/camel-guice-2.9.2.jar;
+									 ${lib}/camel-hawtdb-2.9.2.jar;
+									 ${lib}/camel-hazelcast-2.9.2.jar;
+									 ${lib}/camel-hdfs-2.9.2.jar;
+									 ${lib}/camel-hl7-2.9.2.jar;
+									 ${lib}/camel-http-2.9.2.jar;
+									 ${lib}/camel-http4-2.9.2.jar;
+									 ${lib}/camel-ibatis-2.9.2.jar;
+									 ${lib}/camel-irc-2.9.2.jar;
+									 ${lib}/camel-jackson-2.9.2.jar;
+									 ${lib}/camel-jasypt-2.9.2.jar;
+									 ${lib}/camel-javaspace-2.9.2.jar;
+									 ${lib}/camel-jaxb-2.9.2.jar;
+									 ${lib}/camel-jcr-2.9.2.jar;
+									 ${lib}/camel-jdbc-2.9.2.jar;
+									 ${lib}/camel-jetty-2.9.2.jar;
+									 ${lib}/camel-jibx-2.9.2.jar;
+									 ${lib}/camel-jing-2.9.2.jar;
+									 ${lib}/camel-jms-2.9.2.jar;
+									 ${lib}/camel-jmx-2.9.2.jar;
+									 ${lib}/camel-josql-2.9.2.jar;
+									 ${lib}/camel-jpa-2.9.2.jar;
+									 ${lib}/camel-jsch-2.9.2.jar;
+									 ${lib}/camel-jt400-2.9.2.jar;
+									 ${lib}/camel-juel-2.9.2.jar;
+									 ${lib}/camel-jxpath-2.9.2.jar;
+									 ${lib}/camel-karaf-commands-2.9.2.jar;
+									 ${lib}/camel-kestrel-2.9.2.jar;
+									 ${lib}/camel-krati-2.9.2.jar;
+									 ${lib}/camel-ldap-2.9.2.jar;
+									 ${lib}/camel-lucene-2.9.2.jar;
+									 ${lib}/camel-mail-2.9.2.jar;
+									 ${lib}/camel-mina-2.9.2.jar;
+									 ${lib}/camel-mina2-2.9.2.jar;
+									 ${lib}/camel-msv-2.9.2.jar;
+									 ${lib}/camel-mvel-2.9.2.jar;
+									 ${lib}/camel-mybatis-2.9.2.jar;
+									 ${lib}/camel-nagios-2.9.2.jar;
+									 ${lib}/camel-netty-2.9.2.jar;
+									 ${lib}/camel-ognl-2.9.2.jar;
+									 ${lib}/camel-paxlogging-2.9.2.jar;
+									 ${lib}/camel-printer-2.9.2.jar;
+									 ${lib}/camel-protobuf-2.9.2.jar;
+									 ${lib}/camel-quartz-2.9.2.jar;
+									 ${lib}/camel-quickfix-2.9.2.jar;
+									 ${lib}/camel-restlet-2.9.2.jar;
+									 ${lib}/camel-rmi-2.9.2.jar;
+									 ${lib}/camel-routebox-2.9.2.jar;
+									 ${lib}/camel-rss-2.9.2.jar;
+									 ${lib}/camel-ruby-2.9.2.jar;
+									 ${lib}/camel-saxon-2.9.2.jar;
+									 ${lib}/camel-scala-2.9.2.jar;
+									 ${lib}/camel-script-2.9.2.jar;
+									 ${lib}/camel-servlet-2.9.2.jar;
+									 ${lib}/camel-shiro-2.9.2.jar;
+									 ${lib}/camel-sip-2.9.2.jar;
+									 ${lib}/camel-smpp-2.9.2.jar;
+									 ${lib}/camel-snmp-2.9.2.jar;
+									 ${lib}/camel-soap-2.9.2.jar;
+									 ${lib}/camel-solr-2.9.2.jar;
+									 ${lib}/camel-spring-2.9.2.jar;
+									 ${lib}/camel-spring-integration-2.9.2.jar;
+									 ${lib}/camel-spring-javaconfig-2.9.2.jar;
+									 ${lib}/camel-spring-security-2.9.2.jar;
+									 ${lib}/camel-spring-ws-2.9.2.jar;
+									 ${lib}/camel-sql-2.9.2.jar;
+									 ${lib}/camel-stax-2.9.2.jar;
+									 ${lib}/camel-stream-2.9.2.jar;
+									 ${lib}/camel-stringtemplate-2.9.2.jar;
+									 ${lib}/camel-syslog-2.9.2.jar;
+									 ${lib}/camel-tagsoup-2.9.2.jar;
+									 ${lib}/camel-test-2.9.2.jar;
+									 ${lib}/camel-testng-2.9.2.jar;
+									 ${lib}/camel-velocity-2.9.2.jar;
+									 ${lib}/camel-xmlbeans-2.9.2.jar;
+									 ${lib}/camel-xmlsecurity-2.9.2.jar;
+									 ${lib}/camel-xmpp-2.9.2.jar;
+									 ${lib}/camel-xstream-2.9.2.jar;
+									 ${lib}/camel-zookeeper-2.9.2.jar;
+									 ${lib}/slf4j-api-1.6.1.jar" />
+
+  <target name="compile">
+    <javac srcdir="./src" destdir="./class" 
+        classpath="${classpath}" />
+  </target>
+  <target name="run">
+    <java classpath="${classpath};./class" classname="Test" />
+  </target>
+</project>
