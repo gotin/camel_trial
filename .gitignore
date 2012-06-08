@@ -8,6 +8,9 @@
 /log/*.log
 /tmp
 
+# Ignore class files
+class/*.class
+
 # Ignore other unneeded files.
 # doc/
 *.swp
