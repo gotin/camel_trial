@@ -2,7 +2,7 @@
 
 <project name="camel_test" default="compile">
 	<property name="lib" value="/Users/go/dev/camel/lib" />
-	<property name="classpath" value="${lib}/camel-ahc-2.9.2.jar;
+	<property name="camel_jars" value="${lib}/camel-ahc-2.9.2.jar;
 									 ${lib}/camel-amqp-2.9.2.jar;
 									 ${lib}/camel-apns-2.9.2.jar;
 									 ${lib}/camel-atom-2.9.2.jar;
@@ -113,7 +113,62 @@
 									 ${lib}/camel-xstream-2.9.2.jar;
 									 ${lib}/camel-zookeeper-2.9.2.jar;
 									 ${lib}/slf4j-api-1.6.1.jar" />
+	<!-- other libs -->
+	<property name="extlib" value="/Users/go/dev/camel/extlib" />
 
+	<!-- commons loggin -->
+	<property name="commons_logging_dir" value="${extlib}/commons-logging-1.1.1" />
+	<property name="commons_logging_jars" 
+						value="${commons_logging_dir}/commons-logging-1.1.1-javadoc.jar;
+									 ${commons_logging_dir}/commons-logging-1.1.1-sources.jar;
+									 ${commons_logging_dir}/commons-logging-1.1.1.jar;
+									 ${commons_logging_dir}/commons-logging-adapters-1.1.1.jar;
+									 ${commons_logging_dir}/commons-logging-api-1.1.1.jar;
+									 ${commons_logging_dir}/commons-logging-tests.jar;" />
+
+	<!-- commons http client(3.1) -->
+	<property name="commons_httpclient_jars" value="${extlib}/commons-httpclient-3.1/commons-httpclient-3.1.jar" />
+	
+	<!-- jetty -->
+	<property name="jetty_dir" value="${extlib}/jetty-distribution-8.1.3.v20120416/lib" />
+	<property name="jetty_jars" 
+						value="${jetty_dir}/jetty-ajp-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-annotations-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-client-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-continuation-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-deploy-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-http-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-io-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-jmx-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-jndi-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-overlay-deployer-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-plus-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-policy-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-rewrite-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-security-8.1.3.v20120416.jar;
+									 ${jetty_dir}/${jetty_dir}/jetty-annotations-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-client-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-continuation-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-deploy-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-http-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-io-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-jmx-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-jndi-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-overlay-deployer-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-plus-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-policy-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-rewrite-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-security-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-server-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-servlet-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-servlets-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-util-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-webapp-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-websocket-8.1.3.v20120416.jar;
+									 ${jetty_dir}/jetty-xml-8.1.3.v20120416.jar;
+									 ${jetty_dir}/servlet-api-3.0.jar" />
+
+	<property name="classpath" value="${camel_jars};${commons_logging_jars};${commons_httpclient_jars};${jetty_jars}" />
   <target name="compile">
     <javac srcdir="./src" destdir="./class" 
         classpath="${classpath}" />
